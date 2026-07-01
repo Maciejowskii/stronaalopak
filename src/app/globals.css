@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-plus-jakarta), Inter, sans-serif;
+  
+  --color-brand-teal: #0077B6;       /* Żywy, kontrastujący błękit (Akcenty, CTA) */
+  --color-brand-teal-hover: #0096C7; /* Jaśniejszy błękit dla efektów hover */
+  --color-brand-mint: #F0F4F8;       /* Bardzo jasny, chłodny szaro-błękitny na tła */
+  --color-brand-dark: #191654;       /* Głęboki granat bezpośrednio z logo Alopak */
+  --color-brand-silver: #E2E8F0;
+  --color-brand-cream: #FFFFFF;      /* Czysta biel dla lepszego kontrastu tekstów */
+  --color-brand-gray: #64748B;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #F9F9F6;
+  --foreground: #1A1A1A;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Smooth scroll and elegant focus styles */
+html {
+  scroll-behavior: smooth;
+}
+
+*:focus-visible {
+  outline: 2px solid #1F8381;
+  outline-offset: 2px;
 }
